@@ -104,13 +104,13 @@ x,y = map(int, input().split)
 num_list = map(int, input().split)
 ```
 
-###  3.Variables
+###  3.Variables and Data Types
 
 #### A.Variables
 
-​		Python **must** use the basic assignment symbol `=` to create a variable. When you use `=`, the left element must be a variable while the right element's type is flexible.
+​		Python **must** use the basic assignment symbol `=` to create a variable. When you use `=`, the left element must be a variable while the right element's type is flexible. Again, you cannot declare a variable without assigning it.
 
-#### **B.Meaning of variables**
+#### **I.Meaning of variables**
 
 ​		Variables are references to memory contents.Each variable got an id.Remember id is not equal to address, however you can take is as a address.
 
@@ -126,6 +126,51 @@ print(id(b))
 
  		Variable is only reference.This trait is similar to Java.
 
-#### C.The sizes of variables
+#### II.The sizes of variables
 
 ​		In python, the size of the variable.
+
+#### III.Naming of variable
+
+​		You'd better follow the following suggestions to make your variables more readable:
+
+- Must start with a letter or underscore
+- Can contain any conbition of letters, numbers or underscores except the first characters
+- Do not be too abstractive
+
+### B.Data and Types
+
+​		Types include `integer`, `float`, `complex` and so on.
+
+- Integer: 123, -123, 0b1(binary), 0o7(octonary), 0xa(hexadecimal)
+- floating: 2.7, 3e+2(scientific notation)
+- Boolean:True, False
+
+#### I.Immutable Types
+
+​		String, Integer and boolean are all immutable types in python.If a variable is refer to a string in the memory and you are changing is value superficially, it create a new space in memory to store the new value and redirect the origin variable to the new memory address.That is similar to Java.
+
+#### II.Arithmetic operations with different types
+
+- Roundoff error may occur cause storage of float number in computer is not as accurate as we excepted
+
+- You can convert a varibale one type to another type under certain restrictions.However, some can be accurate, others may lead to errors.Those errors mostly happen when you try to operate a float number
+
+- When comparing float numbers, `==`, `!=`,`>=`, `<=` sometime cannot function as we excepted.We shall use `eps` sometimes.When comparing two float variables name x and y, there are replacement as follow:
+
+  | Original |     Replacement     |
+  | :------: | :-----------------: |
+  |    ==    |  abs(x - y) < eps   |
+  |    !=    | !(abs(x - y) < eps) |
+  |    >=    |    x - y > -eps     |
+  |    <=    |     x - y < eps     |
+
+  You can use a number axis to analyze the priciple of them.Please recall a classic case: how to Judge the number of roots of a quadratic equation with one variable? You can use eps and quadratic formula.
+
+- Radix conversion.We can use functions like `bin()`, `hex()` to convert a variable's radix
+
+- Chain assignment in python is fro left to right, the same of our reading direction
+
+- All objects in python can be. treated as boolean values, however, treated != equivalent
+
+- Short-circuiting in logical operations: we can combine expressions with logical operators such as `&` and `|`.Since in some cases, the results can be calculated before the whole expressions is exectued, the python program is clever enough to save the profermance by circuting those expressions.
