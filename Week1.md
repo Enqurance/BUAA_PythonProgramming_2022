@@ -150,7 +150,7 @@ print(id(b))
 
 ​		String, Integer and boolean are all immutable types in python.If a variable is refer to a string in the memory and you are changing is value superficially, it create a new space in memory to store the new value and redirect the origin variable to the new memory address.That is similar to Java.
 
-#### II.Arithmetic operations with different types
+#### II.Numeric operations
 
 - Roundoff error may occur cause storage of float number in computer is not as accurate as we excepted
 
@@ -167,6 +167,8 @@ print(id(b))
 
   You can use a number axis to analyze the priciple of them.Please recall a classic case: how to Judge the number of roots of a quadratic equation with one variable? You can use eps and quadratic formula.
 
+  When choosing the value of eps, what might be a proper value? The principle is that the value you pick must be neither too big or small and can judge correctly.
+
 - Radix conversion.We can use functions like `bin()`, `hex()` to convert a variable's radix
 
 - Chain assignment in python is fro left to right, the same of our reading direction
@@ -174,3 +176,12 @@ print(id(b))
 - All objects in python can be. treated as boolean values, however, treated != equivalent
 
 - Short-circuiting in logical operations: we can combine expressions with logical operators such as `&` and `|`.Since in some cases, the results can be calculated before the whole expressions is exectued, the python program is clever enough to save the profermance by circuting those expressions.
+
+#### III.Non-numeric operations
+
+​		In python there is no type "character", instead the so called characters are all string. Index of a string can help us visit its element easily.The index begins from 0 cause it shows the offset.
+
+- In some case, we have to judge certain type of strings, starting or end with certain number or something else. We have some built-in functions to do that like `startswith()` and `endswith()`.
+- In python, you can use index is silce a string in a fexilible way. In built-in operations `[]`, we got three value: `[x:y:z]`. If `x` and `y` are positive, we start to count from index 0 to the end of the string. In another way they can also be negative, which means we are counting it from the end of the string to the beginning of the string. In normal cases, we start from `x` and end at `y` and the  default value of `z` is 1. When `z` is set to -1 manually, we count from the opposite direction.
+- Conversion from various types (int, float ect.) to string is allowed, but on the contrary it may not succeed.
+
