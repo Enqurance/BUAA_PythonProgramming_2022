@@ -1,0 +1,11 @@
+if __name__ == "__main__":
+    a0 = input().split()
+    a1 = input().split()
+    a2 = input().split()
+    ele1 = int(a0[0]) * int(a1[1]) * int(a2[2])
+    ele2 = int(a0[1]) * int(a1[2]) * int(a2[0])
+    ele3 = int(a1[0]) * int(a2[1]) * int(a0[2])
+    ele4 = int(a0[0]) * int(a1[2]) * int(a2[1])
+    ele5 = int(a0[1]) * int(a1[0]) * int(a2[2])
+    ele6 = int(a0[2]) * int(a1[1]) * int(a2[0])
+    print(ele1 + ele2 + ele3 - ele4 - ele5 - ele6)

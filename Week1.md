@@ -182,23 +182,23 @@ print(id(b))
 ​		In python there is no type "character", instead the so called characters are all string. Index of a string can help us visit its element easily.The index begins from 0 cause it shows the offset.
 
 - In some case, we have to judge certain type of strings, starting or end with certain number or something else. We have some built-in functions to do that like `startswith()` and `endswith()`.
-- In python, you can use index is silce a string in a fexilible way. In built-in operations `[]`, we got three value: `[x:y:z]`. If `x` and `y` are positive, we start to count from index 0 to the end of the string. In another way they can also be negative, which means we are counting it from the end of the string to the beginning of the string. In normal cases, we start from `x` and end at `y` and the  default value of `z` is 1. When `z` is set to -1 manually, we count from the opposite direction.
+- In python, you can use index is silce a string in a fexilible way. In built-in operations `[]`, we got three value: `[beginIndex:endIndex:step]`. Be careful that we cannot reach `endIndex`.
 - Conversion from various types (int, float ect.) to string is allowed, but on the contrary it may not succeed.
 - Operators and separators in python. Operators contain `+-*/>><<`  and so on.Seperators contain `{}[]()` and so on.
 
 ## 4.Structure
 
-#### A.Sequence type
+#### A.String
 
-​		It's most important trait is that it can be arranged in order.
+​		String can be a typeof structure in python, but you can not change elements in the string with index. You can only change the hole string(by creating a new one in the memory)
 
 #### B.Set
 
-​		Set is a collection of unordered data elements. In python, different types of data can be put into one set. Set is used when you don't need to order your data and the scale of the data is pretty large.
+​		Set is a collection of unordered data elements. In python, different types of data can be put into one set. Set is used when you don't need to order your data and the scale of the data is pretty large. Remember, you can not use index to vistit an element in a set, just like java.
 
 #### C.Map
 
-​		In a map, each key is mapped to a value.
+​		In a map, each key is mapped to a value. In python, type dict is a kind of map. You will have several keys that can map to specific values, and you can visit or change any value using its key.
 
 #### D.List
 
@@ -210,7 +210,11 @@ L = []
 
 ​		Since we have a list, we can operate it with some built-in functions like `sppend()`, `extend()`, `remove()` and so on. Different from C, list in python has encapsulated some strong functions. Like you can use index to visit the elements in a list.
 
-#### E.Line assignment, Shallow copy and Deep copy
+#### E.Tuple
+
+​		Tuple is a kind of immutable set in python that is sequential. A tuple can be create with `()` and elements in it cna be visited with index.
+
+#### Extra:Line assignment, Shallow copy and Deep copy
 
 ​		The concept of shallow copy and deep copy also exist in python. Normal assignment  is shallow copy of course. However their might be a recognition may be wrong. Copy with function `copy()` seems to be a deep copy on the surface. However when there exist a heritage in a list like below:
 
