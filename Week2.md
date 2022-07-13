@@ -97,3 +97,40 @@ c = np.array(a, b)
 - Fitting. When the scale of data is pretty large, or a certain error exists between the measured value and real value, or we need to predict a value out of the sample range, fitting method is generally used. Fitting emphasizes minimum variance. In scientific researches, the smaller variances are, the better the models are.
 
   ![8001657506148_.pic](/Users/enqurance/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/8595b9ac6731cc4fd34dd896c9aacf68/Message/MessageTemp/9e20f478899dc29eb19741386f9343c8/Image/8001657506148_.pic.jpg)
+
+## GUI
+
+### Tkinter
+
+​		`tkinter` is a local library of python which can help us build easy GUI. It includes some built-in functions that are able to run easy GUI. You can import it with:
+
+```Python
+import tkinter
+```
+
+​		Tkinter also has some simple widgets for us to use.
+
+```Python
+# create four radiobuttons with for loop
+buttons = ["Prefect", "Good", "Soso", "Bad"]
+for i in buttons:
+    R = tkinter.Radiobutton(root, text=i)
+    R.pack(anchor=tkinter.W, padx=20)
+    
+# create a textbox for user to input
+root = tkinter.Tk()
+l1 = tkinter.Label(root, text = 'Input a number:')
+l1.pack()
+e1 = tkinter.Entry(root)
+e1.pack()
+b1 = tkinter.Button(root,text = 'OK')
+b1.pack()
+root.mainloop()
+```
+
+​		Apart from those text type widgets, there are also some picture type widgets.
+
+```Python
+tkinter.Label(root,text = 'error',compound = 'bottom',bitmap ='error').pack()
+```
+
