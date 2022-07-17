@@ -5,12 +5,15 @@ window.title("Bonjour")
 window.geometry("400x300")
 
 var = tk.StringVar()
-l = tk.Label(window, textvariable=var, background="white", width=10)
+l = tk.Label(window, textvariable=var, background="white", width=30)
 l.pack()
+l1 = tk.Label(window, background="white", width=30)
+l1.pack()
 
 
 def print_selection():
     var.get()
+    l1.config(text="You have selected " + var.get())
 
 
 r1 = tk.Radiobutton(window, text="Beijing", value="Beijing",
